@@ -21,9 +21,6 @@ module.exports = {
         new HtmlWebpackPlugin({  // Also generate a test.html
             filename: 'submit.html',
             template: './src/submit.html',
-            inject: true,
-            scriptLoading: "defer",
-            cache: true,
           }),
         new MiniCssExtractPlugin(),
     ],

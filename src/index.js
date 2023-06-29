@@ -17,6 +17,7 @@ const showError = (message) => {
     error.textContent = message;
 }
 
+
 const showSuccess = (input) => {
     const formField = document.querySelector("#email");
     formField.classList.remove("error");
@@ -31,16 +32,29 @@ const checkEmail = () => {
     if (!isEmailValid(email)){
         showError("Valid email required");
     } else {
-        showSuccess(emailEl);
+        showSuccess();
         valid = true;
     }
     return valid;
 }
 
-form.addEventListener("submit", (e) => {
+
+
+function validateEmail(e) {
     e.preventDefault();
-    const idFormValid =checkEmail();
-    if(idFormValid) {
+    const isFormValid =checkEmail();
+    if(isFormValid) {
         window.location.assign("submit.html");
     }
-});
+}
+
+if (form) {
+    form.addEventListener("submit", function(e) {
+        // console.log(form, "<----f--o-r---m");
+        e.preventDefault();
+        const isFormValid =checkEmail();
+        if(isFormValid) {
+            window.location.assign("submit.html");
+        }
+    });
+};
