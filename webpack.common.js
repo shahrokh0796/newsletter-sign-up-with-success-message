@@ -5,7 +5,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 
 module.exports = {
-    mode: "none",
     entry: {
         index: "./src/index.js",
     },
@@ -18,10 +17,6 @@ module.exports = {
             scriptLoading: "defer",
             cache: true,
         }),
-        new HtmlWebpackPlugin({  // Also generate a test.html
-            filename: 'submit.html',
-            template: './src/submit.html',
-          }),
         new MiniCssExtractPlugin(),
     ],
     stats: {
