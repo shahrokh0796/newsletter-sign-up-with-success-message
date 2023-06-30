@@ -50,7 +50,7 @@ if (form) {
         const isFormValid =checkEmail();
         if(isFormValid) {
              if(email !== null) {
-                subscribedPersonEmail.innerHTML = email;
+                subscribedPersonEmail.textContent = email;
                 main.style.display = "none";
                 mainTwo.style.display = "block"; 
             }
@@ -61,4 +61,5 @@ if (form) {
 document.querySelector(".btn-subscribtion").addEventListener("click", ()=> {
     main.style.display = "flex";
     mainTwo.style.display = "none"; 
+    emailEl.value = "";
 });
